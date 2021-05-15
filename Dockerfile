@@ -10,3 +10,4 @@ FROM nginx
 EXPOSE 80
 COPY ./nginx-project.conf /etc/nginx/conf.d/default.conf
 COPY --from=build-step /app/build /usr/share/nginx/html
+CMD ["nginx", "-g", "daemon off;"]
